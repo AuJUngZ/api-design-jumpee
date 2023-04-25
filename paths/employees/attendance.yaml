@@ -1,0 +1,74 @@
+get-attendance-path:
+  get:
+    tags:
+      - 'Employee'
+    summary: 'Get attendance'
+    description: 'Get all data of attendance follow by start date and end date'
+    operationId: 'getAttendance'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/attendance.yaml#/all-attendance-req'
+    responses:
+      '200':
+        description: 'Get attendance successfully'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/attendance.yaml#/all-attendance-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/attendance.yaml#/attendance-bad-req-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/attendance.yaml#/attendance-unauthorized-401'
+
+get-individual-attendance-path:
+  get:
+    tags:
+      - 'Employee'
+    summary: 'Get individual attendance'
+    description: 'Get individual data of attendance follow by start date and end date'
+    operationId: 'getIndividualAttendance'
+    parameters:
+      - name: employee_id
+        in: path
+        description: 'Employee ID not employee code (get from success login)'
+        required: true
+        schema:
+          type: string
+          example: '1'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/attendance.yaml#/all-attendance-req'
+    responses:
+      '200':
+        description: 'Get individual attendance successfully'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/attendance.yaml#/individual-attendance-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/attendance.yaml#/attendance-bad-req-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/attendance.yaml#/attendance-unauthorized-401'
+

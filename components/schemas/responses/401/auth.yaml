@@ -1,0 +1,19 @@
+login-resp-401:
+  type: object
+  properties:
+    message:
+      type: string
+      example: 'Login failed'
+    status:
+      type: integer
+      example: 401
+
+update-password-resp-401:
+    type: object
+    properties:
+      message:
+        type: string
+        example: 'Change password failed'
+      status:
+        type: integer
+        example: 401

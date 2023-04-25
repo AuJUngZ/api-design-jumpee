@@ -1,0 +1,19 @@
+login-req:
+  type: object
+  properties:
+    username:
+      type: string
+      example: 'admin'
+    password:
+      type: string
+      example: 'admin'
+
+update-password-req:
+  type: object
+  properties:
+    username:
+      type: string
+      example: 'admin'
+    newPassword:
+      type: string
+      example: 'adminNew'

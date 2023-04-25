@@ -1,0 +1,51 @@
+login-path:
+  post:
+    summary: 'Login'
+    description: 'Login'
+    tags:
+        - 'Authentication'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/auth.yaml#/login-req'
+    responses:
+      '200':
+        description: 'OK'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/auth.yaml#/login-resp-200'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/auth.yaml#/login-resp-401'
+
+update-password-path:
+  post:
+    summary: 'Change password'
+    description: 'Frontend make sure that old password and new password are not the same before send request to backend'
+    tags:
+        - 'Authentication'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/auth.yaml#/update-password-req'
+    responses:
+      '200':
+        description: 'OK'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/auth.yaml#/update-password-resp-200'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/auth.yaml#/update-password-resp-401'

@@ -1,0 +1,69 @@
+all-attendance-resp-200:
+  type: object
+  properties:
+    employees:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+            example: 1
+          name:
+            type: string
+            example: 'Nguyen Van A'
+    summary:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 1
+        present:
+          type: integer
+          example: 1
+        absent:
+          type: integer
+          example: 0
+        late:
+          type: integer
+          example: 0
+        leave:
+          type: integer
+          example: 0
+    status:
+      type: integer
+      example: 200
+
+individual-attendance-resp-200:
+  type: object
+  properties:
+    employee:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: 'Nguyen Van A'
+    summary:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 1
+        present:
+          type: integer
+          example: 1
+        absent:
+          type: integer
+          example: 0
+        late:
+          type: integer
+          example: 0
+        leave:
+          type: integer
+          example: 0
+    status:
+      type: integer
+      example: 200

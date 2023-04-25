@@ -1,0 +1,22 @@
+login-resp-200:
+  type: object
+  properties:
+    message:
+      type: string
+      example: 'Login success'
+    token:
+      type: string
+      example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjIyNjQxNjQyLCJleHAiOj'
+    status:
+      type: integer
+      example: 200
+
+update-password-resp-200:
+  type: object
+  properties:
+    message:
+      type: string
+      example: 'Change password success'
+    status:
+      type: integer
+      example: 200

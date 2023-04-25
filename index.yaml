@@ -1,0 +1,24 @@
+openapi : 3.0.0
+info:
+  title: 'JUMPEE project API'
+  version: draft
+servers:
+    - url: 'http://localhost'
+      description: 'Local server'
+
+paths:
+  /test:
+    $ref: '/test.yaml#/test-path'
+  /authen/login:
+    $ref: 'paths/authentication/auth.yaml#/login-path'
+  /authen/update-password:
+    $ref: 'paths/authentication/auth.yaml#/update-password-path'
+  /employee/attendance:
+    $ref: 'paths/employees/attendance.yaml#/get-attendance-path'
+  /employee/attendance/{employee_id}:
+    $ref: 'paths/employees/attendance.yaml#/get-individual-attendance-path'
+
+security:
+  - bearerAuth: []
+
+#hide to show schema

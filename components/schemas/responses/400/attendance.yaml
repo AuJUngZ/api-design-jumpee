@@ -1,0 +1,17 @@
+attendance-bad-req-400:
+  type: object
+  properties:
+    message:
+      type: string
+      example: 'Bad request'
+    errors:
+      type: array
+      items:
+        type: object
+        properties:
+          field:
+            type: string
+            example: 'start_date'
+          message:
+            type: string
+            example: 'Start date must be less than end date'
