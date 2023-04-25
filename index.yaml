@@ -7,8 +7,6 @@ servers:
       description: 'Local server'
 
 paths:
-  /test:
-    $ref: '/test.yaml#/test-path'
   /authen/login:
     $ref: 'paths/authentication/auth.yaml#/login-path'
   /authen/update-password:
