@@ -4,7 +4,7 @@ all-attendance-resp-200:
     employees:
       type: array
       items:
-        $ref: '../../models/employee-attendance.yaml#/employee-attendance-model'
+        $ref: '../../models/employee-attendance.yaml#/employee-attendance-admin-model'
     summary:
       type: object
       properties:
@@ -14,12 +14,6 @@ all-attendance-resp-200:
         present:
           type: integer
           example: 1
-        leave:
-          type: integer
-          example: 0
-        absent:
-          type: integer
-          example: 0
     status:
       type: string
       example: 200 OK
@@ -28,7 +22,7 @@ individual-attendance-resp-200:
   type: object
   properties:
     employee:
-      $ref: '../../models/employee-attendance.yaml#/employee-attendance-model'
+      $ref: '../../models/employee-attendance.yaml#/employee-attendance-individual-model'
     status:
       type: string
       example: 200 OK

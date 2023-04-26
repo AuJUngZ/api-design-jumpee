@@ -2,7 +2,7 @@ get-attendance-path:
   get:
     tags:
       - 'Employee'
-    summary: 'Get attendance'
+    summary: 'Get attendance use for admin dashboard'
     description: 'Get all data of attendance follow by start date and end date'
     operationId: 'getAttendance'
     requestBody:
@@ -36,7 +36,7 @@ get-individual-attendance-path:
   get:
     tags:
       - 'Employee'
-    summary: 'Get individual attendance'
+    summary: 'Get individual attendance use for employee dashboard for each employee'
     description: 'Get individual data of attendance follow by start date and end date. should pass employee id in path'
     operationId: 'getIndividualAttendance'
     parameters:

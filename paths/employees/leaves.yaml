@@ -1,0 +1,98 @@
+get-leaves-stat-path:
+  get:
+    tags:
+      - 'Employee'
+    summary: 'Get leaves statistics'
+    description: 'Get leaves statistics of all employees that have approved leaves within the specified certifier person.'
+    operationId: 'getLeavesStat'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/leaves.yaml#/leave-stat-req'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/leaves-stat-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/leaves.yaml#/leaves-stat-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/leave-stat-resp-401'
+
+get-individual-leave-stat-path:
+  get:
+    tags:
+      - 'Employee'
+    summary: 'Get individual leaves statistics'
+    description: 'Get leaves statistics of an employee that have approved leaves within the specified certifier person.'
+    operationId: 'getLeavesStat'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/leaves.yaml#/leave-stat-req'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/leaves-stat-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/leaves.yaml#/leaves-stat-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/leave-stat-resp-401'
+
+get-leaves-path:
+  get:
+    tags:
+      - 'Employee'
+    summary: 'Get list of leaves that not yet approved to show to certifier'
+    description: 'Get list of leaves that not yet approved'
+    operationId: 'getLeaves'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/leaves.yaml#/get-list-leave-req'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/get-list-leaves-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/leaves.yaml#/get-list-leaves-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/get-list-leaves-resp-401'

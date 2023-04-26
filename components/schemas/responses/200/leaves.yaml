@@ -1,0 +1,93 @@
+leaves-stat-resp-200:
+  type: object
+  properties:
+    leaves:
+      type: array
+      items:
+        type: object
+        properties:
+          employee_id:
+            type: integer
+            description: 'Employee ID'
+            example: 1
+          employee_name:
+            type: string
+            description: 'Employee name'
+            example: 'John Doe'
+          business_leave:
+            type: integer
+            description: 'Business leave'
+            example: 0
+          sick_leave:
+            type: integer
+            description: 'Sick leave'
+            example: 0
+          special_leave:
+            type: integer
+            description: 'Special leave'
+            example: 0
+
+get-list-leaves-resp-200:
+  type: object
+  properties:
+    list-leave:
+      type: array
+      items:
+        type: object
+        properties:
+          leave_req_id:
+            type: integer
+            description: 'Leave request ID'
+            example: 1
+          employee_id:
+            type: integer
+            description: 'Employee ID'
+            example: 1
+          leave_type:
+            type: integer
+            description: 'Leave type'
+            example: 1
+          leave_reason:
+            type: string
+            description: 'Leave reason'
+            example: 'Sick'
+          leave_reason_des:
+            type: string
+            description: 'Leave reason description'
+            example: 'Sick'
+          leave_place:
+            type: string
+            description: 'Leave place'
+            example: 'Home'
+          leave_gps:
+            type: string
+            description: 'Leave GPS'
+            example: '0.000000,0.000000'
+          leave_duration:
+            type: integer
+            description: 'Leave duration'
+            example: 1
+          leave_start_date:
+            type: string
+            description: 'Leave start date'
+            example: '2020-01-01'
+          leave_end_date:
+            type: string
+            description: 'Leave end date'
+            example: '2020-01-01'
+          leave_by_special_day:
+            type: integer
+            description: 'Leave by special day'
+            example: 0
+          approved_count:
+            type: integer
+            description: 'Approved count'
+            example: 0
+          leave_status:
+            type: string
+            description: 'Leave status'
+            example: 'Pending'
+          created_at:
+            type: string
+            description: 'Created at'
+            example: '2020-01-01 00:00:00'

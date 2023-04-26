@@ -13,10 +13,15 @@ paths:
     $ref: 'paths/authentication/auth.yaml#/login-path'
   /auth/update-password:
     $ref: 'paths/authentication/auth.yaml#/update-password-path'
-  /employee/attendance:
+  /employees/attendance:
     $ref: 'paths/employees/attendance.yaml#/get-attendance-path'
-  /employee/attendance/{employee_id}:
+  /employees/attendance/{employee_id}:
     $ref: 'paths/employees/attendance.yaml#/get-individual-attendance-path'
-
+  /employees/leaves:
+    $ref: 'paths/employees/leaves.yaml#/get-leaves-path'
+  /employees/leaves/stat:
+    $ref: 'paths/employees/leaves.yaml#/get-leaves-stat-path'
+  /employees/leaves/stat/{employee_id}:
+    $ref: 'paths/employees/leaves.yaml#/get-individual-leave-stat-path'
 security:
   - bearerAuth: []
