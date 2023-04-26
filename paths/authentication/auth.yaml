@@ -17,6 +17,12 @@ login-path:
           application/json:
             schema:
               $ref: '../../components/schemas/responses/200/auth.yaml#/login-resp-200'
+      '400':
+        description: 'Bad Request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/auth.yaml#/login-resp-400'
       '401':
         description: 'Unauthorized'
         content:
@@ -49,3 +55,29 @@ update-password-path:
           application/json:
             schema:
               $ref: '../../components/schemas/responses/401/auth.yaml#/update-password-resp-401'
+
+create-user-path:
+    post:
+      summary: 'Create user'
+      description: 'Create user'
+      tags:
+          - 'Authentication'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/requestBody/auth.yaml#/create-user-req'
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                $ref: '../../components/schemas/responses/200/auth.yaml#/create-user-resp-200'
+        '400':
+          description: 'Bad Request'
+          content:
+            application/json:
+              schema:
+                $ref: '../../components/schemas/responses/400/auth.yaml#/create-user-bad-400'

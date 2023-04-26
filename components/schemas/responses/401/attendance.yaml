@@ -5,5 +5,5 @@ attendance-unauthorized-401:
       type: string
       example: 'Unauthorized'
     status:
-      type: integer
-      example: 401
+      type: string
+      example: 401 Unauthorized

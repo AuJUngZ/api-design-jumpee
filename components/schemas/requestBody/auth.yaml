@@ -1,7 +1,7 @@
 login-req:
   type: object
   properties:
-    username:
+    emailOrUsername:
       type: string
       example: 'admin'
     password:
@@ -11,9 +11,46 @@ login-req:
 update-password-req:
   type: object
   properties:
-    username:
+    emailOrUsername:
       type: string
       example: 'admin'
+    oldPassword:
+      type: string
+      example: 'admin_Password'
     newPassword:
       type: string
       example: 'adminNew'
+
+create-user-req:
+  type: object
+  properties:
+    emailOrUsername:
+      type: string
+      example: 'admin'
+    password:
+      type: string
+      example: 'admin'
+    employee_code:
+      type: string
+      example: 'BNN007'
+    first_name:
+      type: string
+      example: 'somchi'
+    last_name:
+      type: string
+      example: 'somsom'
+    nickname:
+      type: string
+      example: 'som'
+    hire_date:
+      type: string
+      example: '2020-01-01'
+    role:
+      type: string
+      example: 'admin'
+    department:
+      type: string
+      example: 'UX UI Design'
+    level:
+      type: string
+      example: 'junior'

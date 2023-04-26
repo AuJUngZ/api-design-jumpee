@@ -4,12 +4,33 @@ login-resp-200:
     message:
       type: string
       example: 'Login success'
+    employee:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        first_name:
+          type: string
+          example: 'John'
+        last_name:
+          type: string
+          example: 'Doe'
+        nickname:
+          type: string
+          example: 'John'
+        role:
+          type: string
+          example: 'senior'
+        department:
+          type: string
+          example: 'UX & UI Design'
     token:
       type: string
       example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjIyNjQxNjQyLCJleHAiOj'
     status:
-      type: integer
-      example: 200
+      type: string
+      example: 200 OK
 
 update-password-resp-200:
   type: object
@@ -18,5 +39,42 @@ update-password-resp-200:
       type: string
       example: 'Change password success'
     status:
-      type: integer
-      example: 200
+      type: string
+      example: 200 OK
+
+create-user-resp-200:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 200 OK
+    message:
+      type: string
+      example: 'User created successfully'
+    employee:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        emailOrUsername:
+          type: string
+          example: 'admin'
+        employee_code:
+          type: string
+          example: 'BNN007'
+        first_name:
+          type: string
+          example: 'somchi'
+        last_name:
+          type: string
+          example: 'somsom'
+        nickname:
+          type: string
+          example: 'som'
+        role:
+          type: string
+          example: 'admin'
+        department:
+          type: string
+          example: 'UX UI Design'

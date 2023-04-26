@@ -5,8 +5,8 @@ login-resp-401:
       type: string
       example: 'Login failed'
     status:
-      type: integer
-      example: 401
+      type: string
+      example: 401 Unauthorized
 
 update-password-resp-401:
     type: object
@@ -15,5 +15,5 @@ update-password-resp-401:
         type: string
         example: 'Change password failed'
       status:
-        type: integer
-        example: 401
+        type: string
+        example: 401 Unauthorized

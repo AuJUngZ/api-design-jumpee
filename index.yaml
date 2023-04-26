@@ -3,13 +3,15 @@ info:
   title: 'JUMPEE project API'
   version: draft
 servers:
-    - url: 'http://localhost'
+    - url: 'http://localhost/jumpee_api'
       description: 'Local server'
 
 paths:
-  /authen/login:
+  /auth/create-user:
+    $ref: 'paths/authentication/auth.yaml#/create-user-path'
+  /auth/login:
     $ref: 'paths/authentication/auth.yaml#/login-path'
-  /authen/update-password:
+  /auth/update-password:
     $ref: 'paths/authentication/auth.yaml#/update-password-path'
   /employee/attendance:
     $ref: 'paths/employees/attendance.yaml#/get-attendance-path'
@@ -18,5 +20,3 @@ paths:
 
 security:
   - bearerAuth: []
-
-#hide to show schema

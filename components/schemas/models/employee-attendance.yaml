@@ -1,0 +1,42 @@
+employee-attendance-model:
+  type: object
+  properties:
+    employee_id:
+      type: integer
+      example: 1
+    employee_name:
+      type: string
+      example: 'John Doe'
+    employee_code:
+      type: string
+      example: 'BNN001'
+    data_date:
+      type: string
+      example: '2020-01-01'
+    start_time:
+      type: string
+      example: '08:00:00'
+    start_time_status:
+      type: string
+      example: 'normal'
+    end_time:
+      type: string
+      example: '17:00:00'
+    end_time_status:
+      type: string
+      example: 'normal'
+    enter_temp:
+      type: number
+      example: 36.5
+    leave_temp:
+      type: number
+      example: 36.5
+    working_days:
+      type: integer
+      example: 1
+    leave_days:
+      type: integer
+      example: 0
+    absent_days:
+      type: integer
+      example: 0

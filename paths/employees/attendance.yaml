@@ -31,12 +31,13 @@ get-attendance-path:
             schema:
               $ref: '../../components/schemas/responses/401/attendance.yaml#/attendance-unauthorized-401'
 
+#individual path
 get-individual-attendance-path:
   get:
     tags:
       - 'Employee'
     summary: 'Get individual attendance'
-    description: 'Get individual data of attendance follow by start date and end date'
+    description: 'Get individual data of attendance follow by start date and end date. should pass employee id in path'
     operationId: 'getIndividualAttendance'
     parameters:
       - name: employee_id
