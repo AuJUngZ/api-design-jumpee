@@ -15,13 +15,21 @@ paths:
     $ref: 'paths/authentication/auth.yaml#/update-password-path'
   /employees/attendance:
     $ref: 'paths/employees/attendance.yaml#/get-attendance-path'
-  /employees/attendance/{employee_id}:
+  /employees/attendance/{?employee_id}:
     $ref: 'paths/employees/attendance.yaml#/get-individual-attendance-path'
   /employees/leaves:
     $ref: 'paths/employees/leaves.yaml#/get-leaves-path'
   /employees/leaves/stat:
     $ref: 'paths/employees/leaves.yaml#/get-leaves-stat-path'
-  /employees/leaves/stat/{employee_id}:
+  /employees/leaves/stat/{?employee_id}:
     $ref: 'paths/employees/leaves.yaml#/get-individual-leave-stat-path'
+  /employees/leaves/history{?employee_id}:
+    $ref: 'paths/employees/leaves.yaml#/get-leaves-history-path'
+  /employee/leaves/request:
+    $ref: 'paths/employees/leaves.yaml#/request-leave-path'
+  /employee/leaves/certifier:
+    $ref: 'paths/employees/leaves.yaml#/get-certifier-path'
+  /employee/leaves/certifier/add:
+    $ref: 'paths/employees/leaves.yaml#/add-certifier-path'
 security:
   - bearerAuth: []

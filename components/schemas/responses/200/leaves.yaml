@@ -91,3 +91,110 @@ get-list-leaves-resp-200:
             type: string
             description: 'Created at'
             example: '2020-01-01 00:00:00'
+
+get-list-leaves-history-resp-200:
+  type: object
+  properties:
+    leaves:
+      type: array
+      items:
+        type: object
+        properties:
+          leave_req_id:
+            type: integer
+            description: 'Leave request ID'
+            example: 1
+          employee_id:
+            type: integer
+            description: 'Employee ID'
+            example: 1
+          employee_name:
+            type: string
+            description: 'Employee name'
+            example: 'John Doe'
+          business_leave:
+            type: integer
+            description: 'Business leave'
+            example: 0
+          sick_leave:
+            type: integer
+            description: 'Sick leave'
+            example: 0
+          special_leave:
+            type: integer
+            description: 'Special leave'
+            example: 0
+          certifier:
+            type: array
+            items:
+              type: object
+              properties:
+                certifier_id:
+                  type: integer
+                  description: 'Certifier ID'
+                  example: 1
+                certifier_name:
+                  type: string
+                  description: 'Certifier name'
+                  example: 'John Doe'
+                certifier_nickname:
+                  type: string
+                  description: 'Certifier nickname'
+                  example: 'John'
+                status:
+                  type: string
+                  description: 'Status'
+                  example: 'Approved'
+
+request-leave-resp-200:
+  type: object
+  properties:
+    message:
+      type: string
+      description: 'Message'
+      example: 'Leave request has been sent'
+    status:
+      type: string
+      description: 'Status'
+      example: '200 OK'
+
+get-certifier-resp-200:
+  type: object
+  properties:
+    certifiers:
+      type: array
+      items:
+        type: object
+        properties:
+          certifier_id:
+            type: integer
+            description: 'Certifier ID'
+            example: 1
+          certifier_name:
+            type: string
+            description: 'Certifier name'
+            example: 'John Doe'
+          certifier_nickname:
+            type: string
+            description: 'Certifier nickname'
+            example: 'John'
+          certifier_permission:
+            type: string
+            description: 'Certifier permission (create, leave)'
+            example: 'create'
+    status:
+      type: string
+      description: 'Status'
+      example: '200 OK'
+
+add-certifier-resp-200:
+  type: object
+  properties:
+    message:
+      type: string
+      description: 'Message'
+      example: 'Certifier has been added'
+    status:
+      type: string
+      description: 'Status'
+      example: '200 OK'

@@ -1,10 +1,6 @@
 leave-stat-req:
   type: object
   properties:
-    token:
-      type: string
-      description: 'Token'
-      example: 'wdawdadawdawdaw2'
     startDate:
       type: string
       description: 'Start date'
@@ -17,10 +13,6 @@ leave-stat-req:
 get-list-leave-req:
   type: object
   properties:
-    token:
-      type: string
-      description: 'Token'
-      example: 'wdawdadawdawdaw2'
     startDate:
       type: string
       description: 'Start date'
@@ -29,3 +21,84 @@ get-list-leave-req:
       type: string
       description: 'End date'
       example: '2021-01-31'
+
+get-list-leave-history-req:
+  type: object
+  properties:
+    startDate:
+      type: string
+      description: 'Start date'
+      example: '2021-01-01'
+    endDate:
+      type: string
+      description: 'End date'
+      example: '2021-01-31'
+
+request-leave-req:
+  type: object
+  properties:
+    employeeId:
+      type: integer
+      description: 'Employee ID'
+      example: 1
+    emergencyLeave:
+      type: integer
+      description: 'Emergency leave 0 (means false) also 1 (means true)'
+      example: 0
+    leaveType:
+      type: string
+      description: 'Leave type : (business_leave),(sick_leave)'
+      example: 'business_leave'
+    leaveReason:
+      type: string
+      description: 'Leave reason'
+      example: 'Sick'
+    reasonDes:
+      type: string
+      description: 'Reason description'
+      example: 'Sick'
+    leavePlace:
+      type: string
+      description: 'Leave place'
+      example: 'Home'
+    leaveGps:
+      type: string
+      description: 'Leave GPS'
+      example: '123123123,123123123'
+    leaveDuration:
+      type: integer
+      description: 'Leave duration 0 (all day) , 1 (morning), 2 (afternoon)'
+      example: 1
+    leaveStartDate:
+      type: string
+      description: 'Leave start date'
+      example: '2021-01-01'
+    leaveEndDate:
+      type: string
+      description: 'Leave end date'
+      example: '2021-01-01'
+    leaveBySpecialDay:
+      type: integer
+      description: 'Leave by special day 0 (means false) also 1 (means true)'
+      example: 0
+
+add-certifier-req:
+  type: object
+  properties:
+    numberOfCertifier:
+      type: integer
+      description: 'Number of certifier will be added'
+      example: 1
+    certifiers:
+      type: array
+      items:
+        type: object
+        properties:
+          employeeId:
+            type: integer
+            description: 'Employee ID'
+            example: 1
+          type:
+            type: string
+            description: 'Type of certifier (create , business_leave , sick_leave)'
+            example: 'create'

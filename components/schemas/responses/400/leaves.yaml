@@ -27,3 +27,48 @@ get-list-leaves-resp-400:
           password:
             type: string
             example: 'Start date is required'
+
+get-list-leaves-history-resp-400:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 400 Bad Request
+    message:
+      type: array
+      items:
+        type: object
+        properties:
+          password:
+            type: string
+            example: 'Start date is required'
+
+request-leave-resp-400:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 400 Bad Request
+    message:
+      type: array
+      items:
+        type: object
+        properties:
+          password:
+            type: string
+            example: 'Start date is required'
+
+add-certifier-resp-400:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 400 Bad Request
+    message:
+      type: array
+      items:
+        type: object
+        properties:
+          data:
+            type: string
+            example: 'Number of certifier no match'

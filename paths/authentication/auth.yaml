@@ -3,13 +3,15 @@ login-path:
     summary: 'Login'
     description: 'Login'
     tags:
-        - 'Authentication'
+      - 'Authentication'
     requestBody:
       required: true
       content:
         application/json:
           schema:
             $ref: '../../components/schemas/requestBody/auth.yaml#/login-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
     responses:
       '200':
         description: 'OK'
@@ -35,13 +37,15 @@ update-password-path:
     summary: 'Change password'
     description: 'Frontend make sure that old password and new password are not the same before send request to backend'
     tags:
-        - 'Authentication'
+      - 'Authentication'
     requestBody:
       required: true
       content:
         application/json:
           schema:
             $ref: '../../components/schemas/requestBody/auth.yaml#/update-password-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
     responses:
       '200':
         description: 'OK'
@@ -57,27 +61,29 @@ update-password-path:
               $ref: '../../components/schemas/responses/401/auth.yaml#/update-password-resp-401'
 
 create-user-path:
-    post:
-      summary: 'Create user'
-      description: 'Create user'
-      tags:
-          - 'Authentication'
-      requestBody:
-        required: true
+  post:
+    summary: 'Create user'
+    description: 'Create user'
+    tags:
+      - 'Authentication'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/auth.yaml#/create-user-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: 'OK'
         content:
           application/json:
             schema:
-              $ref: '../../components/schemas/requestBody/auth.yaml#/create-user-req'
-      responses:
-        '200':
-          description: 'OK'
-          content:
-            application/json:
-              schema:
-                $ref: '../../components/schemas/responses/200/auth.yaml#/create-user-resp-200'
-        '400':
-          description: 'Bad Request'
-          content:
-            application/json:
-              schema:
-                $ref: '../../components/schemas/responses/400/auth.yaml#/create-user-bad-400'
+              $ref: '../../components/schemas/responses/200/auth.yaml#/create-user-resp-200'
+      '400':
+        description: 'Bad Request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/auth.yaml#/create-user-bad-400'

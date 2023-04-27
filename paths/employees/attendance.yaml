@@ -11,6 +11,8 @@ get-attendance-path:
         application/json:
           schema:
             $ref: '../../components/schemas/requestBody/attendance.yaml#/all-attendance-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
     responses:
       '200':
         description: 'Get attendance successfully'
@@ -41,12 +43,13 @@ get-individual-attendance-path:
     operationId: 'getIndividualAttendance'
     parameters:
       - name: employee_id
-        in: path
+        in: query
         description: 'Employee ID not employee code (get from success login)'
         required: true
         schema:
           type: string
           example: '1'
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
     requestBody:
       required: true
       content:

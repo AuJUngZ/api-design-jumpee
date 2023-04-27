@@ -11,6 +11,8 @@ get-leaves-stat-path:
         application/json:
           schema:
             $ref: '../../components/schemas/requestBody/leaves.yaml#/leave-stat-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
     responses:
       '200':
         description: 'Successful operation'
@@ -37,13 +39,20 @@ get-individual-leave-stat-path:
       - 'Employee'
     summary: 'Get individual leaves statistics'
     description: 'Get leaves statistics of an employee that have approved leaves within the specified certifier person.'
-    operationId: 'getLeavesStat'
+    operationId: 'getLeavesStat-individual'
     requestBody:
       required: true
       content:
         application/json:
           schema:
             $ref: '../../components/schemas/requestBody/leaves.yaml#/leave-stat-req'
+    parameters:
+      - in: query
+        name: employeeId
+        schema:
+          type: string
+        required: true
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
     responses:
       '200':
         description: 'Successful operation'
@@ -70,13 +79,15 @@ get-leaves-path:
       - 'Employee'
     summary: 'Get list of leaves that not yet approved to show to certifier'
     description: 'Get list of leaves that not yet approved'
-    operationId: 'getLeaves'
+    operationId: 'getLeavesHistory'
     requestBody:
       required: true
       content:
         application/json:
           schema:
             $ref: '../../components/schemas/requestBody/leaves.yaml#/get-list-leave-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
     responses:
       '200':
         description: 'Successful operation'
@@ -96,3 +107,137 @@ get-leaves-path:
           application/json:
             schema:
               $ref: '../../components/schemas/responses/401/leaves.yaml#/get-list-leaves-resp-401'
+
+get-leaves-history-path:
+  get:
+    tags:
+      - 'Employee'
+    summary: 'Get list of leaves that already approved or not to show to each employee'
+    description: 'Get list of leaves that already approved or not to show to each employee'
+    operationId: 'getLeaves'
+    parameters:
+      - in: query
+        name: employeeId
+        schema:
+        type: integer
+        description: 'Employee ID'
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/leaves.yaml#/get-list-leave-history-req'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/get-list-leaves-history-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/leaves.yaml#/get-list-leaves-history-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/get-list-leaves-history-resp-401'
+
+request-leave-path:
+  post:
+    tags:
+      - 'Employee'
+    summary: 'Request leave'
+    description: 'To create a new leave request'
+    operationId: 'requestLeave'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/leaves.yaml#/request-leave-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/request-leave-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/leaves.yaml#/request-leave-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/request-leave-resp-401'
+
+get-certifier-path:
+  get:
+    tags:
+      - 'Certifier'
+    summary: 'Get all certifier'
+    description: 'To show all person that have permission to approve leave request or create special holiday'
+    operationId: 'getCertifier'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/get-certifier-resp-200'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/get-certifier-resp-401'
+
+add-certifier-path:
+  post:
+    tags:
+      - 'Certifier'
+    summary: 'Add new certifier this route only for admin'
+    description: 'To add new person that have permission to approve leave request or create special holiday'
+    operationId: 'addCertifier'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/leaves.yaml#/add-certifier-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/add-certifier-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/leaves.yaml#/add-certifier-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/add-certifier-resp-401'
+

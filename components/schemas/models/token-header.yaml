@@ -1,0 +1,8 @@
+token:
+  name: 'Authorization'
+  in: 'header'
+  description: 'Bearer token'
+  example: 'Bearer your_token_here'
+  required: true
+  schema:
+    type: 'string'
