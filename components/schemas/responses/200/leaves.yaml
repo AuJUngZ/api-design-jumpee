@@ -91,6 +91,27 @@ get-list-leaves-resp-200:
             type: string
             description: 'Created at'
             example: '2020-01-01 00:00:00'
+    approved:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 'signature ID of that row data'
+            example: 1
+          certifier_id:
+            type: integer
+            description: 'Certifier ID'
+            example: 1
+          leave_id:
+            type: integer
+            description: 'Leave ID'
+            example: 1
+          status:
+            type: string
+            description: 'Status'
+            example: 'Pending'
 
 get-list-leaves-history-resp-200:
   type: object
