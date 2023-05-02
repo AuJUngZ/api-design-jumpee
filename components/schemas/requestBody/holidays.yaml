@@ -1,0 +1,42 @@
+create-holiday-req:
+  type: object
+  properties:
+    created_by:
+      type: integer
+      description: 'Employee ID of the user who created the holiday'
+      example: 1
+    holiday_type:
+      type: string
+      description: 'Type of holiday'
+      enum:
+        - 'Regular'
+        - 'Created'
+    employees:
+      type: array
+      description: 'List of employees'
+      items:
+        type: object
+        properties:
+          employee_id:
+            type: integer
+            description: 'Employee ID'
+    holiday_name:
+      type: string
+      description: 'Project name'
+    holiday_des:
+      type: string
+      description: 'holiday description'
+      example: 'holiday description'
+    holiday_date:
+      type: string
+      description: 'Date of holiday'
+      format: date
+    startTime:
+      type: string
+      description: 'Start time of holiday'
+      format: time
+      example: '08:00:00'
+    endTime:
+      type: string
+      description: 'End time of holiday'
+      example: '17:00:00'

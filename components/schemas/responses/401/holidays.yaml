@@ -1,0 +1,9 @@
+create-holiday-resp-401:
+  type: object
+  properties:
+    message:
+      type: string
+      example: 'Change password failed'
+    status:
+      type: string
+      example: 401 Unauthorized

@@ -1,0 +1,65 @@
+get-config-resp-200:
+  type: object
+  properties:
+    status:
+      type: string
+      example: '200 OK'
+    configs:
+      type: array
+      items:
+        type: object
+        properties:
+          business_leave_senior_day:
+            type: integer
+            example: 1
+          business_leave_junior_day:
+            type: integer
+            example: 1
+          sick_leave_senior_day:
+            type: integer
+            example: 1
+          sick_leave_junior_day:
+            type: integer
+            example: 1
+          continuous_leave_senior_day:
+            type: integer
+            example: 1
+          continuous_leave_junior_day:
+            type: integer
+            example: 1
+          num_approvals_business_leave:
+            type: integer
+            example: 1
+          num_approvals_sick_leave:
+            type: integer
+            example: 1
+
+update-leave-config-resp-200:
+  type: object
+  properties:
+    status:
+      type: string
+      example: '200 OK'
+    message:
+      type: string
+      example: 'Update leave config successfully'
+
+update-attendance-config-resp-200:
+  type: object
+  properties:
+    status:
+      type: string
+      example: '200 OK'
+    message:
+      type: string
+      example: 'Update attendance config successfully'
+
+update-time-interval-resp-200:
+  type: object
+  properties:
+    status:
+      type: string
+      example: '200 OK'
+    message:
+      type: string
+      example: 'Update time interval successfully'

@@ -1,0 +1,39 @@
+get-config-resp-401:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 401 Unauthorized
+    message:
+      type: string
+      example: 'Invalid token'
+
+update-leave-config-resp-401:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 401 Unauthorized
+    message:
+      type: string
+      example: 'Invalid token'
+
+update-attendance-config-resp-401:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 401 Unauthorized
+    message:
+      type: string
+      example: 'Invalid token'
+
+update-time-interval-resp-401:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 401 Unauthorized
+    message:
+      type: string
+      example: 'Invalid token'

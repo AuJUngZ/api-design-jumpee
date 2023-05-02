@@ -1,0 +1,14 @@
+create-holiday-resp-400:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 400 Bad Request
+    message:
+      type: array
+      items:
+        type: object
+        properties:
+          requestBody:
+            type: string
+            example: 'some request body is empty'

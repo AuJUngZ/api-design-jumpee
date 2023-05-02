@@ -1,0 +1,30 @@
+get-health-resp-200:
+  type: object
+  properties:
+    status:
+      type: string
+      example: '200 OK'
+    data:
+      type: object
+      properties:
+        sex:
+          type: string
+          example: male
+        height:
+          type: integer
+          example: 170
+        weight:
+          type: integer
+          example: 60
+        body_temp:
+          type: number
+          example: 36.5
+        blood_pressure_high:
+          type: integer
+          example: 120
+        blood_pressure_low:
+          type: integer
+          example: 80
+        spo2:
+          type: integer
+          example: 95

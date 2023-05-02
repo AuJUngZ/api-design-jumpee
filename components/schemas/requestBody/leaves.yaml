@@ -81,14 +81,14 @@ request-leave-req:
       type: integer
       description: 'Leave by special day 0 (means false) also 1 (means true)'
       example: 0
+    leaveDays:
+      type: integer
+      description: 'How long of leave'
+      example: 1
 
 add-certifier-req:
   type: object
   properties:
-    numberOfCertifier:
-      type: integer
-      description: 'Number of certifier will be added'
-      example: 1
     certifiers:
       type: array
       items:
@@ -102,3 +102,15 @@ add-certifier-req:
             type: string
             description: 'Type of certifier (create , business_leave , sick_leave)'
             example: 'create'
+
+approve-leave-req:
+  type: object
+  properties:
+    leaveId:
+      type: integer
+      description: 'Leave ID'
+      example: 1
+    certifierId:
+      type: integer
+      description: 'Certifier ID'
+      example: 1

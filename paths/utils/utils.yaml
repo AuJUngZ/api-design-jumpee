@@ -1,0 +1,160 @@
+get-config-path:
+  get:
+    tags:
+      - 'utils'
+    summary: Get config
+    description: Get config
+    operationId: getConfig
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/utils.yaml#/get-config-resp-200'
+      '401':
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/utils.yaml#/get-config-resp-401'
+
+update-leave-config-path:
+  post:
+    tags:
+      - 'utils'
+    summary: Update leave config
+    description: Update leave config
+    operationId: updateLeaveConfig
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/utils.yaml#/update-leave-config-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/utils.yaml#/update-leave-config-resp-200'
+      '400':
+        description: Bad Request
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/utils.yaml#/update-leave-config-resp-400'
+      '401':
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/utils.yaml#/update-leave-config-resp-401'
+
+update-attendance-config-path:
+  post:
+    tags:
+      - 'utils'
+    summary: Update attendance config
+    description: Update attendance config
+    operationId: updateAttendanceConfig
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/utils.yaml#/update-attendance-config-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/utils.yaml#/update-attendance-config-resp-200'
+      '400':
+        description: Bad Request
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/utils.yaml#/update-attendance-config-resp-400'
+      '401':
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/utils.yaml#/update-attendance-config-resp-401'
+
+update-time-interval-path:
+  post:
+    tags:
+      - 'utils'
+    summary: Update time interval
+    description: Update time interval
+    operationId: updateTimeInterval
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/utils.yaml#/update-time-interval-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/utils.yaml#/update-time-interval-resp-200'
+      '400':
+        description: Bad Request
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/utils.yaml#/update-time-interval-resp-400'
+      '401':
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/utils.yaml#/update-time-interval-resp-401'
+
+
+get-health-path:
+  get:
+    tags:
+      - 'utils'
+    summary: Get health
+    description: Get health
+    operationId: getHealth
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/health.yaml#/get-health-req'
+    parameters:
+      - in: query
+        name: employeeId
+        schema:
+          type: int
+          example: 1
+        required: true
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/health.yaml#/get-health-resp-200'
+      '401':
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/health.yaml#/get-health-resp-401'
+

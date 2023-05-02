@@ -72,3 +72,18 @@ add-certifier-resp-400:
           data:
             type: string
             example: 'Number of certifier no match'
+
+approve-leave-resp-400:
+  type: object
+  properties:
+      status:
+        type: string
+        example: 400 Bad Request
+      message:
+        type: array
+        items:
+          type: object
+          properties:
+            leave_id:
+                type: string
+                example: 'Leave id is required'

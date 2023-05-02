@@ -209,7 +209,7 @@ get-certifier-path:
 add-certifier-path:
   post:
     tags:
-      - 'Certifier'
+      - 'Admin path'
     summary: 'Add new certifier this route only for admin'
     description: 'To add new person that have permission to approve leave request or create special holiday'
     operationId: 'addCertifier'
@@ -241,3 +241,37 @@ add-certifier-path:
             schema:
               $ref: '../../components/schemas/responses/401/leaves.yaml#/add-certifier-resp-401'
 
+approve-leave-path:
+  post:
+    tags:
+      - 'Certifier'
+    summary: 'Approve leave request'
+    description: 'To approve leave request'
+    operationId: 'approveLeave'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/leaves.yaml#/approve-leave-req'
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: 'Successful operation'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/leaves.yaml#/approve-leave-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/leaves.yaml#/approve-leave-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/leaves.yaml#/approve-leave-resp-401'

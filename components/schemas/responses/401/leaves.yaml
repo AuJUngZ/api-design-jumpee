@@ -57,3 +57,13 @@ add-certifier-resp-401:
     message:
       type: string
       example: 'Invalid token'
+
+approve-leave-resp-401:
+  type: object
+  properties:
+    status:
+      type: string
+      example: 401 Unauthorized
+    message:
+      type: string
+      example: 'Invalid token'

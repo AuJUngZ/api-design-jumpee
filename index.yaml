@@ -31,5 +31,20 @@ paths:
     $ref: 'paths/employees/leaves.yaml#/get-certifier-path'
   /employee/leaves/certifier/add:
     $ref: 'paths/employees/leaves.yaml#/add-certifier-path'
+  /employee/leaves/certifier/approve:
+    $ref: 'paths/employees/leaves.yaml#/approve-leave-path'
+    #TODO : implement these routes
+  /holidays/create:
+    $ref: 'paths/holidays/holidays.yaml#/create-holiday-path'
+  /utils/get-config: #DONE
+    $ref: 'paths/utils/utils.yaml#/get-config-path'
+  /utils/update-config/leave: #DONE
+    $ref: 'paths/utils/utils.yaml#/update-leave-config-path'
+  /utils/update-config/attendance: #DONE
+    $ref: 'paths/utils/utils.yaml#/update-attendance-config-path'
+  /utils/update-time-interval: #DONE
+    $ref: 'paths/utils/utils.yaml#/update-time-interval-path'
+  /employee/health/{?employeeId}: #DONE
+    $ref: 'paths/utils/utils.yaml#/get-health-path'
 security:
   - bearerAuth: []

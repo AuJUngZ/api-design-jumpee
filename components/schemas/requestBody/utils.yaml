@@ -1,0 +1,54 @@
+update-leave-config-req:
+  type: object
+  properties:
+    business_leave_senior_day:
+      type: integer
+      example: 1
+    business_leave_junior_day:
+      type: integer
+      example: 1
+    sick_leave_senior_day:
+      type: integer
+      example: 1
+    sick_leave_junior_day:
+      type: integer
+      example: 1
+    continuous_leave_senior_day:
+      type: integer
+      example: 1
+    continuous_leave_junior_day:
+      type: integer
+      example: 1
+    num_approvals_business_leave:
+      type: integer
+      example: 1
+    num_approvals_sick_leave:
+      type: integer
+      example: 1
+
+update-attendance-config-req:
+  type: object
+  properties:
+    work_start_time:
+      type: string
+      example: 08:00:00
+    work_end_time:
+      type: string
+      example: 17:00:00
+    work_late_time:
+      type: string
+      example: 09:00:00
+
+update-time-interval-req:
+  type: object
+  properties:
+    time_interval:
+      type: array
+      items:
+        properties:
+          on_duty_time:
+            type: string
+            example: 08:00:00
+          off_duty_time:
+            type: string
+            example: 17:00:00

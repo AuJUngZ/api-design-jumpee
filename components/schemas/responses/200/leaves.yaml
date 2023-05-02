@@ -219,3 +219,15 @@ add-certifier-resp-200:
       type: string
       description: 'Status'
       example: '200 OK'
+
+approve-leave-resp-200:
+    type: object
+    properties:
+        message:
+          type: string
+          description: 'Message'
+          example: 'Leave request has been updated status'
+        status:
+          type: string
+          description: 'Status'
+          example: '200 OK'

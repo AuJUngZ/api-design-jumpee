@@ -1,0 +1,34 @@
+create-holiday-path:
+  post:
+    tags:
+      - 'Admin or staff path'
+    summary: 'To create specific holiday'
+    description: 'Create holiday'
+    operationId: 'createHoliday'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/requestBody/holidays.yaml#/create-holiday-req'
+      required: true
+    parameters:
+      - $ref: '../../components/schemas/models/token-header.yaml#/token'
+    responses:
+      '200':
+        description: 'Holiday created'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/200/holidays.yaml#/create-holiday-resp-200'
+      '400':
+        description: 'Bad request'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/400/holidays.yaml#/create-holiday-resp-400'
+      '401':
+        description: 'Unauthorized'
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/responses/401/holidays.yaml#/create-holiday-resp-401'

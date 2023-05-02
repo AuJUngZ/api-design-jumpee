@@ -1,0 +1,9 @@
+create-holiday-resp-200:
+  type: object
+  properties:
+    message:
+      type: string
+      example: Holiday created
+    status:
+      type: string
+      example: 200 OK
